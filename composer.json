@@ -1,0 +1,20 @@
+{
+  "name": "app/childbirth",
+  "description": "Childbirth report",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Kamil Franckiewicz",
+      "email": "kamil@franckiewicz.com.pl"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=7.4"
+  }
+}
