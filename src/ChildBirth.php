@@ -6,18 +6,10 @@ namespace App;
 
 final class ChildBirth
 {
-    private Child $child;
-    private ChildCard $childCard;
-    private Hospital $hospital;
     private string $dateOfBirth;
     private string $albumUrl;
 
-    public function __construct(Child $child, ChildCard $childCard, Hospital $hospital)
-    {
-        $this->child = $child;
-        $this->childCard = $childCard;
-        $this->hospital = $hospital;
-    }
+    public function __construct(private Child $child, private ChildCard $childCard, private Hospital $hospital) {}
 
     private function getDateOfBirth(): string
     {

@@ -6,16 +6,7 @@ namespace App;
 
 final class ChildCard
 {
-    private float $weight;
-    private string $gender;
-    private int $length;
-
-    public function __construct($weight, $length, $gender)
-    {
-        $this->weight = $weight;
-        $this->length = $length;
-        $this->gender = $gender;
-    }
+    public function __construct(private float $weight, private int $length, private string $gender) {}
 
     public function getWeight(): float
     {

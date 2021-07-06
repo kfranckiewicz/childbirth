@@ -6,17 +6,10 @@ namespace App;
 
 final class Child
 {
-    private string $firstName;
-    private string $lastName;
+    public function __construct(private string $firstName, private string $lastName) {}
 
-    public function __construct($firstName, $lastName)
+    public function getFullName(): string
     {
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
-    }
-
-    public function getName(): string
-    {
-        return "{$this->firstName} {$this->lastName}";
+        return "$this->firstName $this->lastName";
     }
 }
