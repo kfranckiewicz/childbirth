@@ -14,7 +14,7 @@ $childBirth = new ChildBirth(
     new ChildCard(3.45, 56, 'kobieta'),
     new Hospital('Szpital św. Wojciecha w Gdańsku'),
 );
-
-$childBirth->setDateOfBirth('07-09-2020 3:28');
-$childBirth->setAlbumUrl('https://drive.google.com/drive/folders/1jqD_F-QARiXanvWnUK-Yb8wr5d7pyHcA?usp=sharing');
-$childBirth->printResult();
+echo $childBirth
+    ->setDateOfBirth('07-09-2020 3:28')
+    ->setAlbumUrl('https://drive.google.com/drive/folders/1jqD_F-QARiXanvWnUK-Yb8wr5d7pyHcA?usp=sharing')
+    ->generateReport();

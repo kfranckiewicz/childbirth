@@ -21,14 +21,16 @@ final class ChildBirth
         return $this->albumUrl;
     }
 
-    public function setDateOfBirth(string $dateOfBirth): void
+    public function setDateOfBirth(string $dateOfBirth): self
     {
         $this->dateOfBirth = $dateOfBirth;
+        return $this;
     }
 
-    public function setAlbumUrl(string $albumUrl): void
+    public function setAlbumUrl(string $albumUrl): self
     {
         $this->albumUrl = $albumUrl;
+        return $this;
     }
 
     public function getChild(): Child
@@ -36,15 +38,18 @@ final class ChildBirth
         return $this->child;
     }
 
-    public function printResult(): void
+    public function generateReport(): string
     {
-        echo "\n Raport z porodu: \n";
-        echo "Data porodu: {$this->getDateOfBirth()} \n";
-        echo "Miejsce porodu: {$this->hospital->getName()} \n";
-        echo "Imię i nazwisko: {$this->getChild()->getName()} \n";
-        echo "Waga: {$this->childCard->getWeight()} kg \n";
-        echo "Długość: {$this->childCard->getLength()} cm \n";
-        echo "Płeć: {$this->childCard->getGender()} \n";
-        echo "Galeria: {$this->getAlbumUrl()} \n";
+        return
+            <<<EOL
+                Raport z porodu: \n
+                Data porodu: {$this->getDateOfBirth()} \n
+                Miejsce porodu: {$this->hospital->getName()} \n
+                Imię i nazwisko: {$this->getChild()->getFullName()} \n
+                Waga: {$this->childCard->getWeight()} kg \n
+                Długość: {$this->childCard->getLength()} cm \n
+                Płeć: {$this->childCard->getGender()} \n
+                Galeria: {$this->getAlbumUrl()} \n
+            EOL;
     }
 }

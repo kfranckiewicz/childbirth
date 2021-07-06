@@ -1,6 +1,6 @@
 # Childbirth report
 
-## Run report
+## Generate report
 ```bash
 docker-compose up
 ```
